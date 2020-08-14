@@ -16,7 +16,7 @@ software you'd find in a production pipeline.
 
 OpenImageIO consists of:
 
-* Simple but powerful ImageInput and ImageOutput APIs that provide
+* Simple but powerful ImageInput and ImageOutput APIs that provide 
   an abstraction for reading and writing image files of nearly any
   format, without the calling application needing to know any of the
   details of these file formats, and indeed without the calling 
