@@ -306,6 +306,7 @@ jobs:
           path: build/*/testsuite/*/*.*
 
   windows-vs2017:
+    # windows build
     name: "Windows VS2017"
     runs-on: windows-2016
     steps:
