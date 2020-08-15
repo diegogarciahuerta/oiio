@@ -41,7 +41,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ github.job }}
-          path: build/*/testsuite/*/*.*
+          path: build
 
   windows-vs2017:
     # windows build
@@ -67,7 +67,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ github.job }}
-          path: build/*/testsuite/*/*.*
+          path: build
 
   sanitizer:
     # Run sanitizers. These don't need to run on every push. Just PRs, nightly
