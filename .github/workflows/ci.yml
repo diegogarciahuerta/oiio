@@ -52,5 +52,5 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ github.job }}
-          path: C:/hostedtoolcache/windows/Boost/1.72.0/x86_64
+          path: C:/hostedtoolcache/windows/Boost/1.72.0/x86_64/**/*.dll
             
