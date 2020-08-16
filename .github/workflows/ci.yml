@@ -38,14 +38,14 @@ jobs:
 #             source src/build-scripts/ci-startup.bash
 #             source src/build-scripts/gh-win-installdeps.bash
 #             source src/build-scripts/ci-build-and-test.bash
-      - uses: actions/upload-artifact@v2
-        with:
-          name: ${{ github.job }}
-          path: |
-            dist
-            ext/dist/bin
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: ${{ github.job }}
+#           path: |
+#             dist
+#             ext/dist/bin
       - uses: actions/upload-artifact@v2
         with:
           name: artifact_2
           path: |
-            C:/hostedtoolcache/windows/Boost/1.72.0/x86_64
+            C:/hostedtoolcache/windows/Boost/1.72.0/x86_64/**/*.dll
