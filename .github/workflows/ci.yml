@@ -24,28 +24,29 @@ jobs:
     name: "Windows VS2019"
     runs-on: windows-2019
     steps:
-#       - uses: actions/checkout@v2
-#       - name: Setup Nuget.exe
-#         uses: warrenbuckley/Setup-Nuget@v1
-#       - name: all
-#         shell: bash
-#         env:
-#           PYTHON_VERSION: 3.6
-#           CMAKE_GENERATOR: "Visual Studio 16 2019"
-#           OPENEXR_VERSION: v2.4.1
-#           SKIP_TESTS: 1
-#         run: |
-#             source src/build-scripts/ci-startup.bash
-#             source src/build-scripts/gh-win-installdeps.bash
-#             source src/build-scripts/ci-build-and-test.bash
-#       - uses: actions/upload-artifact@v2
-#         with:
-#           name: ${{ github.job }}
-#           path: |
-#             dist
-#             ext/dist/bin
+      - uses: actions/checkout@v2
+      - name: Setup Nuget.exe
+        uses: warrenbuckley/Setup-Nuget@v1
+      - name: all
+        shell: bash
+        env:
+          PYTHON_VERSION: 3.6
+          CMAKE_GENERATOR: "Visual Studio 16 2019"
+          OPENEXR_VERSION: v2.4.1
+          SKIP_TESTS: 1
+        run: |
+            source src/build-scripts/ci-startup.bash
+            source src/build-scripts/gh-win-installdeps.bash
+            
+#         source src/build-scripts/ci-build-and-test.bash
       - uses: actions/upload-artifact@v2
         with:
-          name: artifact_2
+          name: ${{ github.job }}
           path: |
-            C:/hostedtoolcache/windows/Boost/1.72.0/x86_64/**/*.dll
+            dist
+            ext/dist/bin
+#       - uses: actions/upload-artifact@v2
+#         with:
+#           name: artifact_2
+#           path: |
+#             C:/hostedtoolcache/windows/Boost/1.72.0/x86_64/**/*.dll
