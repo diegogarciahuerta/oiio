@@ -49,8 +49,17 @@ jobs:
     name: "Windows VS2019"
     runs-on: windows-2019
     steps:
+      - name: all
+        shell: bash
+        env:
+          PYTHON_VERSION: 3.6
+          CMAKE_GENERATOR: "Visual Studio 16 2019"
+          OPENEXR_VERSION: v2.4.1
+          SKIP_TESTS: 1
+        run: |
+            source src/build-scripts/ci-startup.bash
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ github.job }}
-          path: C:/hostedtoolcache/windows/Boost/1.72.0/x86_64/**/*.dll
+          path: C:/hostedtoolcache/windows/Boost/1.72.0/x86_64/*/*.dll
             
